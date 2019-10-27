@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@using ShortUrlService.Models
+@model List<UrlViewModel>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+<a href="@Url.Action("Edit", "Home")">New</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">CreationDate</th>
+            <th scope="col">FullUrl</th>
+            <th scope="col">ShortUrl</th>
+            <th scope="col">RedirectionCount</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var u in Model)
+        {
+            @Html.Partial("UrlTableRow", u)
+        }
+    </tbody>
+</table>

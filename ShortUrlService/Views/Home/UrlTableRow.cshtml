@@ -1,0 +1,22 @@
+﻿@model ShortUrlService.Models.UrlViewModel
+
+
+<tr>
+    <td>@Model.CreationDate</td>
+    <td>
+        @*<p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                Show
+            </a>
+        </p>
+        <div class="collapse" id="collapseExample">
+            <div class="card card-body">
+                @Model.FullUrl
+            </div>
+        </div>*@
+        @Model.FullUrl
+    </td>
+    <td>@Model.ShortUrl</td>
+    <td>@Model.RedirectionCount</td>
+    <td><a href='@Url.Action("Delete", "Home", new { Id = Model.Id })'>Delete</a> | <a href='@Url.Action("Edit", "Home", new { Id = Model.Id })'>Edit</a></td>
+</tr>
